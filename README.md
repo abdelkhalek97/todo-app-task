@@ -38,4 +38,4 @@ docker run -d -p 8081:8080 -v /var/run:/var/run -v jenkins_home:/var/jenkins_hom
 ![home_Page Image](./Images/app.png)
 
 ### Note
-- CustomJenkins is the Dockerfile code that was used to build jenkins custome image.
+- CustomJenkins is the Dockerfile code that was used to build jenkins custom image.
