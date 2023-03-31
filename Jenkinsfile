@@ -29,7 +29,6 @@ pipeline {
             steps {
 
                 sh '''
-                docker exec bash
                 docker exec $(docker ps |grep abdelkhalek97/todo-app | cut -d ' ' -f 1) bash -c 'yarn test:unit -u ; yarn test:e2e --headless'
                 '''
             
