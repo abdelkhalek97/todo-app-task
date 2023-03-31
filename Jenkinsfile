@@ -8,8 +8,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                 sh """
                 docker login -u ${USERNAME} -p ${PASSWORD}
-                docker build -f Dockerfile -t abdelkhalek97/Todo-app .
-                docker push abdelkhalek97/Todo-app
+                docker build -f Dockerfile -t abdelkhalek97/todo-app .
+                docker push abdelkhalek97/todo-app
                 """
             
             }
@@ -21,7 +21,7 @@ pipeline {
                      withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                 sh """
                 docker login -u ${USERNAME} -p ${PASSWORD}
-                docker run -d -p 8080:8080 -d abdelkhalek97/Todo-app
+                docker run -d -p 8080:8080 -d abdelkhalek97/todo-app
                 docker ps -a
                 """
                      }
