@@ -19,7 +19,6 @@ pipeline {
         stage('CD'){
             steps{
                 sh """
-                docker login -u ${USERNAME} -p ${PASSWORD}
                 docker run -d -p 8080:8080 -d abdelkhalek97/todo-app
                 docker ps -a
                 """
