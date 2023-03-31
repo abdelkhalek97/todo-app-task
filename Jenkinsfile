@@ -18,11 +18,11 @@ pipeline {
         }
         stage('CD'){
             steps{
-                sh """
-                
+                sh '''
+                docker rm -f $(docker ps |grep abdelkhalek97/todo-app | cut -d ' ' -f 1) || true
                 docker run -d -p 8080:8080 -d abdelkhalek97/todo-app
                 docker ps -a
-                """
+                '''
             }
         }
         
