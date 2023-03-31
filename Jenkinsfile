@@ -19,6 +19,7 @@ pipeline {
         stage('CD'){
             steps{
                 sh """
+                docker kill $(docker ps |grep abdelkhalek97/todo-app | cut -d ' ' -f 1)
                 docker run -d -p 8080:8080 -d abdelkhalek97/todo-app
                 docker ps -a
                 """
