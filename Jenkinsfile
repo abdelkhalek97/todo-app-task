@@ -29,9 +29,8 @@ pipeline {
             steps {
 
                 sh '''
-                docker exec $(docker ps |grep abdelkhalek97/todo-app | cut -d ' ' -f 1) bash
-                yarn test:unit -u
-                yarn test:e2e --headless
+                docker exec bash
+                docker exec $(docker ps |grep abdelkhalek97/todo-app | cut -d ' ' -f 1) bash -c 'cd /internal ; yarn test:unit -u ; yarn test:e2e --headless'
                 '''
             
             }
