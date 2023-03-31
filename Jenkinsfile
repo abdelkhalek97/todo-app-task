@@ -8,9 +8,6 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                 sh """
                 docker login -u ${USERNAME} -p ${PASSWORD}
-                yum update -y
-                service docker start
-                systemctl enable docker.service
                 docker build -f Dockerfile -t abdelkhalek97/Todo-app .
                 docker push abdelkhalek97/Todo-app
                 """
