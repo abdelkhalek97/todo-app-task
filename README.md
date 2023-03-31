@@ -12,5 +12,30 @@ Run custom jenkins image in detached mode on port 8081 and attaching docker daem
 ```
 docker run -d -p 8081:8080 -v /var/run:/var/run -v jenkins_home:/var/jenkins_home abdelkhalek97/custom-jenkins
 ```
-#### Configuring Jenkins
+- Jenkins will be running on machine localhost on port 8081 , if the port is already used please chose another.
+- http://localhost:8081/
 
+#### Configuring Jenkins
+- Add docker logging credentials by navigatiing to manage jenkins -> manage credentials -> global -> add credentials.\
+![home_Page Image](./Images/manage-credentials.png)\
+![home_Page Image](./Images/global.png)\
+![home_Page Image](./Images/add-credentials.png)\
+![home_Page Image](./Images/docker.png)
+
+- Now navigate to new item and choose pipeline type.
+![home_Page Image](./Images/pipe.png)
+- Insert git repo link : https://github.com/abdelkhalek97/todo-app-task.git 
+- Choose main branch.
+![home_Page Image](./Images/configure.png)
+- Save and build now.\
+![home_Page Image](./Images/build.png)\
+![home_Page Image](./Images/test.png)\
+![home_Page Image](./Images/success.png)
+
+### Application
+- http://localhost:8080/
+- application will be running on machine localhost on port 8080.\
+![home_Page Image](./Images/app.png)
+
+### Note
+- CustomJenkins is the Dockerfile code that was used to build jenkins custome image.
