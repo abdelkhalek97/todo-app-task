@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('CI') {
             steps {
-                git 'https://github.com/abdelkhalek97/todo-app-task.git'
+                git url:'https://github.com/abdelkhalek97/todo-app-task.git',branch:'main'
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                 sh """
                 docker login -u ${USERNAME} -p ${PASSWORD}
