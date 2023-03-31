@@ -18,13 +18,11 @@ pipeline {
         }
         stage('CD'){
             steps{
-                     withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                 sh """
                 docker login -u ${USERNAME} -p ${PASSWORD}
                 docker run -d -p 8080:8080 -d abdelkhalek97/todo-app
                 docker ps -a
                 """
-                     }
             }
         }
         
