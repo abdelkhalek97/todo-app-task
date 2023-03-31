@@ -21,7 +21,6 @@ pipeline {
                 sh '''
                 docker rm -f $(docker ps |grep abdelkhalek97/todo-app | cut -d ' ' -f 1) || true
                 docker run -d -p 8080:8080 -d abdelkhalek97/todo-app
-                docker ps | grep abdelkhalek97/todo-app
                 '''
             }
         }
@@ -30,6 +29,7 @@ pipeline {
 
                 sh '''
                 docker exec $(docker ps |grep abdelkhalek97/todo-app | cut -d ' ' -f 1) bash -c 'yarn test:unit -u ; yarn test:e2e --headless'
+                docker ps | grep abdelkhalek97/todo-app
                 '''
             
             }
