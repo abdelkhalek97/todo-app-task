@@ -1,6 +1,6 @@
 # Todo-App
 
-This a repo used in a jenkins pipeline to CI/CD and testing simple node application .\
+This is a repo used in a jenkins pipeline to CI/CD and testing simple node application .\
 application used : https://github.com/dobromir-hristov/todo-app
 - custom jenkins image that has docker installed.
 - The application is deployed on the local machine ip and port 8080.
@@ -41,6 +41,6 @@ docker run -d -p 8081:8080 -v /var/run:/var/run -v jenkins_home:/var/jenkins_hom
 - CustomJenkins is the Dockerfile code that was used to build jenkins custom image.
 - In case of running a container of the todo app:
 ```
-docker run -d -p 8080:8080 -d abdelkhalek97/todo-app
+docker run -d -p 8080:8080 abdelkhalek97/todo-app
 ```
 - make sure that port 8080 isn't used or chose another port
